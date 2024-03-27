@@ -1,0 +1,23 @@
+print ('Bem-vindo a loja da Paloma Souza')
+valor_produto = float( input('Informe o valor do produto: R$ ') ) #flot pois tem casa decimal
+qtd_produto = int(input('Informe a quantidade do produto:')) #int pois qtd de produto só pode ser numero inteiro 
+
+if 0 <= qtd_produto < 200: #Quantidade menor que 200.
+   desconto = 0
+
+elif 200 <= qtd_produto < 1000: #Quantidade igual ou maior que 200 e menor que 1000. 
+   desconto = 0.05 #5% = 0.05
+
+elif 1000 <= qtd_produto < 2000: #Quantidade igual ou maior que 1000 e menor que 2000.
+    desconto = 0.10 #10% = 0.10
+
+else: 
+  desconto = 0.15 #Quantidade de produto igual ou maior que 2000. 15% = 0.15
+
+Semdesconto =  valor_produto * qtd_produto #valor sem desconto: multiplicar valor do produto por qtd de produto
+
+Comdesconto = Semdesconto - Semdesconto * desconto #valor com desconto: multiplicar valor sem desconto pelo desconto e subtrair o valor sem desconto.  
+
+print('O valor Sem desconto foi R${:.2f}'. format(Semdesconto)) 
+
+print('O valor Com desconto foi R${:.2f}' . format(Comdesconto, desconto))
