@@ -1,0 +1,61 @@
+print ('Bem-vindo a sorveteria da Paloma Souza')
+print (' -----------------------------------CARDÁPIO--------------------------------------')
+print ('| Nº DE BOLAS | Sabor Tradicional (tr) | Sabor Premium (pr) | Sabor Especial (es) | ')
+print ('|     1       |         R$ 6,00        |       R$ 7,00      |        R$ 8,00      | ')
+print ('|     2       |         R$ 11,00       |       R$ 13,00     |        R$ 15,00     | ')
+print ('|     3       |         R$ 15,00       |       R$ 18,00     |        R$ 21,00     | ')
+print (' ---------------------------------------------------------------------------------')
+acumulador = 0
+while True:
+  sabor = input('Qual o sabor desejado (tr/pr/es)?')
+  if sabor != 'tr'  and sabor != 'pr' and sabor != 'es':
+    print('Esse sabor é inválido. Por favor, tente novamente')
+    continue #Se o usuário colocar o sabor inválido, volta para inicio do while.
+
+  qtd_bolas = input('Quantas bolas de sorvete deseja? (1/2/3): ')
+  if qtd_bolas != '1' and qtd_bolas != '2' and qtd_bolas != '3':
+    print('Quantidade de bolas de sorvete inválido. Por favor, tente novamente')
+    continue #Se o úsuario colocar o sabor inválido, volta para inicio do while.
+
+  if qtd_bolas == '1' and sabor == 'tr':
+    print('Você escolheu o sabor tradicional com 1 bola de sorvete')
+    acumulador = acumulador + 6 #pegar o valor que tinha do acumulador e somar com 6
+
+  elif qtd_bolas == '1' and sabor == 'pr':
+    print('Você escolheu o sabor premium com 1 bola de sorvete')
+    acumulador = acumulador + 7 #pegar o valor que tinha do acumulador e somar com 7
+
+  elif qtd_bolas == '1' and sabor == 'es':
+    print('Você escolheu o sabor especial com 1 bola de sorvete')
+    acumulador = acumulador + 8 #pegar o valor que tinha do acumulador e somar com 8 
+
+  elif qtd_bolas == '2' and sabor == 'tr':
+    print('Você escolheu o sabor tradicional com 2 bolas de sorvete')
+    acumulador = acumulador + 11 #pegar o valor que tinha do acumulador e somar com 11
+
+  elif qtd_bolas == '2' and sabor == 'pr':
+    print('Você escolheu o sabor premium com 2 bolas de sorvete')
+    acumulador = acumulador + 13 #pegar o valor que tinha do acumulador e somar com 13
+
+  elif qtd_bolas == '2' and sabor == 'es':
+    print('Você escolheu o sabor especial com 2 bolas de sorvete')
+    acumulador = acumulador + 15 #pegar o valor que tinha do acumulador e somar com 15
+
+  elif qtd_bolas == '3' and sabor == 'tr':
+    print('Você escolheu o sabor tradicional com 3 bolas de sorvete')
+    acumulador = acumulador + 15 #pegar o valor que tinha do acumulador e somar com 15
+
+  elif qtd_bolas == '3' and sabor == 'pr':
+    print('Você escolheu o sabor premium com 3 bolas de sorvete')
+    acumulador = acumulador + 18 #pegar o valor que tinha do acumulador e somar com 18
+
+  elif qtd_bolas == '3' and sabor == 'es':
+    print('Você escolheu o sabor especial com 3 bolas de sorvete')
+    acumulador = acumulador + 21 #pegar o valor que tinha do acumulador e somar com 21
+
+  pedir_mais = input('Deseja pedir mais algum sorvete (s/ digite outra tecla): ')
+  if pedir_mais == 's':
+    continue #Se o úsuario colocar "s" volta para mensagem solicitando o sabor.  
+  else: #Se o úsuario digitar outra tecla, valor total aparece e finaliza com break.
+    print('O valor total a ser pago: R${:.2f}' . format(acumulador))
+    break 
